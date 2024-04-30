@@ -1,6 +1,9 @@
 #ifndef SORT_H
 #define SORT_H
 
+#define UP 0
+#define DOWN 1
+
 #include<stdlib.h>
 #include <stdio.h>
 
@@ -76,5 +79,12 @@ void heapify(int *array, size_t size, size_t base, size_t root);
 /* Prototypes for Radix sort */
 void radix_sort(int *array, size_t size);
 void lsd_radix_sort(int *array, size_t size, int sig, int *buff);
+
+/* Prototypes of Bitonic sort */
+void bitonic_sort(int *array, size_t size);
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
+		char flow);
+void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
+
 
 #endif
