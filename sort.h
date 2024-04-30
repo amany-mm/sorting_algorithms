@@ -69,5 +69,10 @@ int max_integer(int *array, int size);
 void merge_sort(int *array, size_t size);
 void top_down_merge_sort(int *array, int *buffer, size_t top, size_t down);
 
+/* Prototypes of Heap sort */
+void heap_sort(int *array, size_t size);
+void heapify(int *array, size_t size, size_t base, size_t root);
+
+
 
 #endif
