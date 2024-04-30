@@ -1,29 +1,29 @@
 #include "sort.h"
 
 /**
- * swap_linked_list - Function to Swap 2 nodes in a doubly-linked list
+ * swap_linked_list - swap two nodes in a doubly linked list
  * @head: Pointer to first node
- * @first: Pointer to the first node
- * @second: Pointer to the second node
- *
+ * @left: Pointer to the left node
+ * @right: Pointer to the right node
  * Return: None
  */
-void swap_linked_list(listint_t **head, listint_t **first, listint_t *second)
+void swap_linked_list(listint_t **head, listint_t **left, listint_t *right)
 {
-	(*first)->next = second->next;
-	if (second->next != NULL)
-		second->next->prev = *first;
+	(*left)->next = right->next;
 
-	second->prev = (*first)->prev;
-	second->next = *first;
+	if (right->next != NULL)
+		right->next->prev = *left;
 
-	if ((*first)->prev != NULL)
-		(*first)->prev->next = second;
+	right->prev = (*left)->prev;
+	right->next = *left;
+
+	if ((*left)->prev != NULL)
+		(*left)->prev->next = right;
 	else
-		*head = second;
+		*head = right;
 
-	(*first)->prev = second;
-	*first = second->prev;
+	(*left)->prev = right;
+	*left = right->prev;
 }
 
 
@@ -34,20 +34,28 @@ void swap_linked_list(listint_t **head, listint_t **first, listint_t *second)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *i, *insert_node, *tmp;
+	listint_t *idx, *tmp, *insert_node;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
+	idx = (*list)->next;
 
-	for (i = (*list)->next; i != NULL; i = tmp)
+	while (idx != NULL)
 	{
-		tmp = i->next;
-		insert_node = i->prev;
-		while (insert_node != NULL && i->n < insert_node->n)
+
+		tmp = idx->next;
+
+		insert_node = idx->prev;
+
+		while (insert_node != NULL && idx->n < insert_node->n)
 		{
-			swap_linked_list(list, &insert_node, i);
+			swap_linked_list(list, &insert_node, idx);
+
 			print_list((const listint_t *)*list);
 		}
+
+		/* Update idx to the next node */
+		idx = tmp;
 	}
 }
