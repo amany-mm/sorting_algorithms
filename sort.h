@@ -65,4 +65,9 @@ void swap_left(listint_t **list, listint_t **tail, listint_t **shaker);
 void counting_sort(int *array, size_t size);
 int max_integer(int *array, int size);
 
+/* Prototypes of Merge sort */
+void merge_sort(int *array, size_t size);
+void top_down_merge_sort(int *array, int *buffer, size_t top, size_t down);
+
+
 #endif
