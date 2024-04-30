@@ -48,5 +48,11 @@ void swap_linked_list(listint_t **head, listint_t **first, listint_t *second);
 /* Prototype of Selection sort */
 void selection_sort(int *array, size_t size);
 
+/* Prototypes of Quick sort */
+void quick_sort(int *array, size_t size);
+void recursive_quick_sort(int *array, int low, int high, size_t size);
+int partition_logic(int arr[], int low, int high, size_t size);
+void swap(int *left, int *right);
+
 
 #endif
