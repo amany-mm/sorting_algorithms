@@ -56,10 +56,13 @@ int partition_logic(int arr[], int low, int high, size_t size);
 /* Prototype of Shell sort */
 void shell_sort(int *array, size_t size);
 
-/* Prototypes for Cocktail shaker sort */
+/* Prototypes of Cocktail shaker sort */
 void cocktail_sort_list(listint_t **list);
 void swap_right(listint_t **list, listint_t **tail, listint_t **shaker);
 void swap_left(listint_t **list, listint_t **tail, listint_t **shaker);
 
+/* Prototypes of Counting sort */
+void counting_sort(int *array, size_t size);
+int max_integer(int *array, int size);
 
 #endif
