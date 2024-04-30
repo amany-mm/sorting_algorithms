@@ -73,6 +73,8 @@ void top_down_merge_sort(int *array, int *buffer, size_t top, size_t down);
 void heap_sort(int *array, size_t size);
 void heapify(int *array, size_t size, size_t base, size_t root);
 
-
+/* Prototypes for Radix sort */
+void radix_sort(int *array, size_t size);
+void lsd_radix_sort(int *array, size_t size, int sig, int *buff);
 
 #endif
