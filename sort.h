@@ -1,8 +1,8 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include <stdio.h>
 #include<stdlib.h>
+#include <stdio.h>
 
 
 /**
@@ -33,16 +33,20 @@ typedef enum bool
 } bool;
 
 
-/* Prototypes for helpers print_array and print_list */
+/* Prototypes of helpers print_array and print_list */
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 
-/* Prototypes for Bubble Sort */
+/* Prototypes of Bubble Sort */
 void bubble_sort(int *array, size_t size);
 void swap(int *left, int *right);
 
-/* Prototypes for Insert sort */
+/* Prototypes of Insert sort */
 void insertion_sort_list(listint_t **list);
 void swap_linked_list(listint_t **head, listint_t **first, listint_t *second);
+
+/* Prototype of Selection sort */
+void selection_sort(int *array, size_t size);
+
 
 #endif
