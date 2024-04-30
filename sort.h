@@ -52,7 +52,9 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void recursive_quick_sort(int *array, int low, int high, size_t size);
 int partition_logic(int arr[], int low, int high, size_t size);
-void swap(int *left, int *right);
+
+/* Prototype of Shell sort */
+void shell_sort(int *array, size_t size);
 
 
 #endif
